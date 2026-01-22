@@ -8,7 +8,7 @@ public partial class ResourceTabButton : Button
 	{
 		GlobalManagement.Instance.CurrentMaterialTabChanged += OnResourceTabChanged;
 
-		ButtonPressed = GlobalManagement.Instance.CurrentMaterialTab == Name;
+		ButtonPressed = Utils.Instance.ConvertTabName(GlobalManagement.Instance.CurrentMaterialTab) == Name;
 
 		// Initial check
 		OnResourceTabChanged(GlobalManagement.Instance.CurrentMaterialTab);
@@ -21,7 +21,7 @@ public partial class ResourceTabButton : Button
 
 	private void OnResourceTabChanged(string currentTab)
 	{
-		ButtonPressed = currentTab == Name;
+		ButtonPressed = Utils.Instance.ConvertTabName(currentTab) == Name;
 	}
 
 	private void OnButtonPressed()

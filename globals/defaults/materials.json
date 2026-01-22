@@ -1,5 +1,5 @@
 ﻿{
-  "Fibers": [
+  "fiber": [
     { "name": "Sheep Fleece", "source":  "sheep", "price": 1},
     { "name": "Cotton Fiber", "source":  "plant", "price": 2},
     { "name": "Angora Wool", "source":  "rabbit", "price": 4},
@@ -26,7 +26,7 @@
     { "name": "Seraph-Lamb Wool", "source":  "sheep", "price": 1.1e9},
     { "name": "Memory-Moth Silk", "source":  "moth", "price": 4.3e9}
   ],
-  "Yarns": [
+  "yarn": [
     {
       "name": "Yarn 1",
       "unlock_cost": 0,
@@ -145,7 +145,7 @@
       "price": 7000000
     }
   ],
-  "Items": [
+  "item": [
     {
       "name": "Item 1",
       "unlock_cost": 1000,

@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 public partial class Utils : Node
 {
+    public static Utils Instance { get; private set; }
+
+    public override void _Ready()
+    {
+        Instance = this;
+    }
+
     public string ConvertToReadable(double value)
     {
         // Quadrillion
@@ -36,5 +43,23 @@ public partial class Utils : Node
         }
 
         return value.ToString("N0");
+    }
+
+    public string ConvertTabName(string tabName)
+    {
+        switch (tabName)
+        {
+            case "fiber": return "Fibers";
+            case "Fibers": return "fiber";
+            case "yarn": return "Yarns";
+            case "Yarns": return "yarn";
+            case "item": return "Items";
+            case "Items": return "item";
+            case "spinner": return "Spinning";
+            case "Spinning": return "spinner";
+            case "crafter": return "Crafting";
+            case "Crafting": return "crafter";
+            default: return tabName;
+        }
     }
 }

@@ -17,7 +17,7 @@ public partial class ResourceTab : MarginContainer
 
 	private void OnResourceTabChanged(string currentTab)
 	{
-		PopulateButtons(currentTab);
+		PopulateButtons(Utils.Instance.ConvertTabName(currentTab));
 	}
 
 	private void PopulateButtons(string tabName)

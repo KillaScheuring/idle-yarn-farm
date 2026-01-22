@@ -1,26 +1,4 @@
 using Godot;
-using System.Collections.Generic;
-using System.Text.Json;
-
-public struct MaterialInfo
-{
-    public string Name;
-    public string Category;
-    public double Amount;
-    public double Price;
-    public double Unlock_Cost;
-    public double Production_Time;
-    public string Icon_Path;
-}
-
-public struct MachineInfo
-{
-    public string Name;
-    public double Unlock_Cost;
-    public double Is_Unlocked;
-    public string Recipe;
-    public float Last_Updated;
-}
 
 public partial class GlobalManagement : Node
 {
@@ -38,23 +16,29 @@ public partial class GlobalManagement : Node
     
     [Signal]
     public delegate void MaterialListChangedEventHandler();
+    
+    [Signal]
+    public delegate void MachineListChangedEventHandler();
 
     [Signal]
     public delegate void CurrentProductionTabChangedEventHandler(string currentProductionTab);
     
     public MaterialManager Materials { get; private set; } = new();
+    public MachineManager Machines { get; private set; } = new();
     public static GlobalManagement Instance { get; private set; }
     public double TotalCoins { get; private set; } = 0;
     public string CurrentView { get; set; }
-    public string CurrentMaterialTab { get; set; } = "Fibers";
+    public string CurrentMaterialTab { get; set; } = "fiber";
     public string SelectedMaterialName { get; set; }
     public string CurrentProductionTab { get; set; } = "Spinning";
     
     public override void _Ready()
     {
         Materials.Initialize();
+        Machines.Initialize();
         Instance = this;
         Materials.MaterialListChanged += () => EmitSignal(SignalName.MaterialListChanged);
+        Machines.MachineListChanged += () => EmitSignal(SignalName.MachineListChanged);
     }
 
     public void _Process(float delta)
