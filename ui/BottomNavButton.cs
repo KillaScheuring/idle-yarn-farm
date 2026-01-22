@@ -6,13 +6,12 @@ public partial class BottomNavButton : Button
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-		globalManager.CurrentViewChanged += OnCurrentViewChanged;
+		GlobalManagement.Instance.CurrentViewChanged += OnCurrentViewChanged;
 
-		ButtonPressed = globalManager.CurrentResourceTab == Name;
+		ButtonPressed = GlobalManagement.Instance.CurrentMaterialTab == Name;
 
 		// Initial check
-		OnCurrentViewChanged(globalManager.CurrentResourceTab);
+		OnCurrentViewChanged(GlobalManagement.Instance.CurrentMaterialTab);
 
 		// Connect button press
 		Pressed += OnButtonPressed;
@@ -25,7 +24,6 @@ public partial class BottomNavButton : Button
 
 	private void OnButtonPressed()
 	{
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-		globalManager.SetCurrentView(Name);
+		GlobalManagement.Instance.SetCurrentView(Name);
 	}
 }

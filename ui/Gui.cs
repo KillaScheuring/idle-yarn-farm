@@ -8,12 +8,11 @@ public partial class Gui : Control
 	public override void _Ready()
 	{
 		_coinLabel = GetNode<RichTextLabel>("Overlay GUI/Coins");
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
 		// Connect to the signal
-		globalManager.CoinsChanged += UpdateCoinDisplay;
+		GlobalManagement.Instance.CoinsChanged += UpdateCoinDisplay;
         
 		// Set initial value
-		UpdateCoinDisplay(globalManager.TotalCoins);
+		UpdateCoinDisplay(GlobalManagement.Instance.TotalCoins);
 	}
 
 	private void UpdateCoinDisplay(double totalCoins)

@@ -9,11 +9,10 @@ public partial class ResourceTab : MarginContainer
 	public override void _Ready()
 	{
         // Get the global Autoload instance
-        var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-		globalManager.CurrentResourceTabChanged += OnResourceTabChanged;
+        GlobalManagement.Instance.CurrentMaterialTabChanged += OnResourceTabChanged;
 
 		// Initial population
-		PopulateButtons(globalManager.CurrentResourceTab);
+		PopulateButtons(GlobalManagement.Instance.CurrentMaterialTab);
 	}
 
 	private void OnResourceTabChanged(string currentTab)
@@ -24,7 +23,7 @@ public partial class ResourceTab : MarginContainer
 	private void PopulateButtons(string tabName)
 	{
 		var container = GetNode<VBoxContainer>("ScrollContainer/MarginContainer/VBoxContainer");
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
+		var resourceManager = GlobalManagement.Instance.Materials;
 
 		// Clear existing buttons
 		foreach (Node child in container.GetChildren())
@@ -33,11 +32,11 @@ public partial class ResourceTab : MarginContainer
 		}
 
 		// Create new buttons for current tab
-		foreach (var data in globalManager.AllResources[tabName])
+		foreach (var data in resourceManager.AllMaterials[tabName])
 		{
 			if (ButtonScene?.Instantiate() is ResourceButton button)
 			{
-				button.DisplayResource = data;
+				button.DisplayMaterial = data;
 				container.AddChild(button);
 			}
 		}

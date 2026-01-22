@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 
 [autoload]
 
-GlobalManagementSystem="*res://globals/GlobalManagementSystem.cs"
 Utils="*res://common/Utils.cs"
+GlobalManagement="*res://globals/GlobalManagement.cs"
 
 [display]
 

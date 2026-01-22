@@ -6,13 +6,12 @@ public partial class ResourceTabButton : Button
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-		globalManager.CurrentResourceTabChanged += OnResourceTabChanged;
+		GlobalManagement.Instance.CurrentMaterialTabChanged += OnResourceTabChanged;
 
-		ButtonPressed = globalManager.CurrentResourceTab == Name;
+		ButtonPressed = GlobalManagement.Instance.CurrentMaterialTab == Name;
 
 		// Initial check
-		OnResourceTabChanged(globalManager.CurrentResourceTab);
+		OnResourceTabChanged(GlobalManagement.Instance.CurrentMaterialTab);
 
 		// Connect button press
 		Pressed += OnButtonPressed;
@@ -27,7 +26,6 @@ public partial class ResourceTabButton : Button
 
 	private void OnButtonPressed()
 	{
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-		globalManager.SetCurrentResourceTab(Name);
+		GlobalManagement.Instance.SetCurrentMaterialTab(Name);
 	}
 }

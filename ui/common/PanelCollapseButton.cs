@@ -12,7 +12,6 @@ public partial class PanelCollapseButton : Button
 
 	private void OnButtonPressed()
 	{
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-		globalManager.SetCurrentView("");
+		GlobalManagement.Instance.SetCurrentView("");
 	}
 }

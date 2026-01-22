@@ -17,10 +17,10 @@ public partial class SellResources : PanelContainer
 	{
 		var utils = GetNode<Utils>("/root/Utils");
 		
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-		globalManager.SelectedResourceChanged += UpdateDisplay;
+		GlobalManagement.Instance.SelectedMaterialChanged += UpdateDisplay;
+		var resourceManager = GlobalManagement.Instance.Materials;
 
-		var selectedResource = globalManager.GetResourceByCategoryAndName();
+		var selectedResource = resourceManager.GetResourceByCategoryAndName();
 
 		var slider = GetNode<Slider>("Sell Resource/HSplitContainer/HSlider");
 		slider.Value = PercentageSelected;
@@ -37,7 +37,6 @@ public partial class SellResources : PanelContainer
 
 	private void UpdateDisplay(string selectedResource)
 	{
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
 		var selected = GetNode<MarginContainer>("Sell Resource");
 		var none = GetNode<MarginContainer>("None Selected");
 		if (selectedResource.Length > 0)
@@ -63,20 +62,19 @@ public partial class SellResources : PanelContainer
 
 	private void OnSellButtonPressed()
     {
-        var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-        var selectedResource = globalManager.GetResourceByCategoryAndName();
+        var resourceManager = GlobalManagement.Instance.Materials;
+        var selectedResource = resourceManager.GetResourceByCategoryAndName();
         double totalToEarn = selectedResource.Price * selectedResource.Amount * PercentageSelected;
         
-        globalManager.AddCoins(totalToEarn);
-        globalManager.RemoveResourceAmount(globalManager.SelectedResourceName, selectedResource.Amount * PercentageSelected);
+        GlobalManagement.Instance.AddCoins(totalToEarn);
+        GlobalManagement.Instance.RemoveMaterial(GlobalManagement.Instance.CurrentMaterialTab, GlobalManagement.Instance.SelectedMaterialName, selectedResource.Amount * PercentageSelected);
         
     }
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	private void _process(float delta)
 	{
 		var utils = GetNode<Utils>("/root/Utils");
-		var globalManager = GetNode<GlobalManagementSystem>("/root/GlobalManagementSystem");
-		var selectedResource = globalManager.GetResourceByCategoryAndName();
+		var selectedResource = GlobalManagement.Instance.Materials.GetResourceByCategoryAndName();
 
 		var totalPrice = GetNode<Label>("Sell Resource/HSplitContainer/HBoxContainer/VBoxContainer/Total Price");
 		totalPrice.Text = "$" + utils.ConvertToReadable(selectedResource.Price * selectedResource.Amount * PercentageSelected);
