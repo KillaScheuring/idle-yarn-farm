@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwhtahbwe4iy"]
-
-[ext_resource type="Texture2D" uid="uid://df6lpbex30l6x" path="res://assets/gui/Buttons-Resources.png" id="1_j6a4g"]
-
-[node name="Resources" type="Button"]
-icon = ExtResource("1_j6a4g")
-flat = true

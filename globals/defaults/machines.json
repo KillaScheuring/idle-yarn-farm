@@ -1,0 +1,32 @@
+﻿{
+  "Spinners": [
+    {
+      "name": "Spinner 1",
+      "unlock_cost": 10000,
+      "is_unlocked": true,
+      "recipe": "Yarn 1",
+      "last_updated": null
+    },
+    {
+      "name": "Spinner 2",
+      "unlock_cost": 10000,
+      "isUnlocked": true,
+      "recipe": "Yarn 2",
+      "last_updated": null
+    },
+    {
+      "name": "Spinner 3",
+      "unlock_cost": 10000,
+      "isUnlocked": true,
+      "recipe": "",
+      "last_updated": null
+    },
+    {
+      "name": "Spinner 4",
+      "unlock_cost": 10000,
+      "isUnlocked": false,
+      "recipe": "",
+      "last_updated": null
+    }
+  ]
+}

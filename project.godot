@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="Idle Yarn Farmer"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scenes/main/main.tscn"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
-ResourceManagementSystem="*res://ResourceManagementSystem.cs"
-Utils="*res://Utils.cs"
+GlobalManagementSystem="*res://globals/GlobalManagementSystem.cs"
+Utils="*res://common/Utils.cs"
 
 [display]
 

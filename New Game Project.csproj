@@ -6,6 +6,14 @@
     <RootNamespace>NewGameProject</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="globals\defaults\machines.json" />
+    <Content Include="globals\defaults\resources.json" />
     <Content Include="static_data.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="entities\farms\" />
+    <Folder Include="entities\store\" />
+    <Folder Include="menus\" />
+    <Folder Include="scenes\main\" />
   </ItemGroup>
 </Project>
