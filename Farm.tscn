@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=4 uid="uid://bp28tjtm7dq5c"]
+
+[ext_resource type="TileSet" uid="uid://cgqhthsvdy3sm" path="res://new_tile_set.tres" id="1_jv4jb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14c3m"]
+size = Vector2(1032.5, 1036)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAPQACAAgAAAABAAAAPQAAAAEAAAABAP//PQAAAAEAAAABAP7/PQACAAYAAAAAAAEAPQABAAAAAAAAAAAAPQABAAcAAAAAAP//PQABAAcAAAAAAP7/PQABAAIAAAD//wEAPQABAAAAAAD//wAAPQABAAcAAAD/////PQABAAcAAAD///7/PQABAAIAAAD+/wEAPQAAAAgAAAD+/wAAPQACAAEAAAD+////PQACAAEAAAD+//7/PQAAAAYAAAA=")
+tile_set = ExtResource("1_jv4jb")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(944, 69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-948.25, -66)
+shape = SubResource("RectangleShape2D_14c3m")

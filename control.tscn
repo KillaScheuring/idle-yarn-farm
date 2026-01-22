@@ -1,0 +1,130 @@
+[gd_scene load_steps=18 format=3 uid="uid://cglorrvewq7qm"]
+
+[ext_resource type="Texture2D" uid="uid://bhh6upi3pmfsx" path="res://assets/gui/Buttons-setting.png" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://xwckcl5avu1a" path="res://settings_button.tres" id="1_62e2m"]
+[ext_resource type="FontFile" uid="uid://dj4jkh247qg1p" path="res://assets/fonts/Gluten-Bold.ttf" id="3_qtu10"]
+[ext_resource type="Texture2D" uid="uid://df6lpbex30l6x" path="res://assets/gui/Buttons-Resources.png" id="5_0ytqx"]
+[ext_resource type="PackedScene" uid="uid://cy5s6i4alommi" path="res://resource_manager.tscn" id="5_eh0v1"]
+[ext_resource type="Texture2D" uid="uid://8ho5arevt4i5" path="res://assets/gui/Buttons-Spinning-Wheel.png" id="6_iy58a"]
+[ext_resource type="Texture2D" uid="uid://dn2xygi1oy2k7" path="res://assets/gui/Buttons-Research.png" id="7_pxugv"]
+[ext_resource type="Texture2D" uid="uid://ck43il0tltdcr" path="res://assets/gui/Buttons-Farmer.png" id="8_eh0v1"]
+[ext_resource type="Texture2D" uid="uid://bxyruxyyn76g5" path="res://assets/gui/Buttons-Wingfoot.png" id="9_am1vj"]
+[ext_resource type="Texture2D" uid="uid://d0lmhnk6c4h8a" path="res://assets/gui/Buttons-house.png" id="10_g31lc"]
+[ext_resource type="Texture2D" uid="uid://bmhqfie0hmljh" path="res://assets/icons/v.png" id="10_pxugv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtu10"]
+texture = ExtResource("1_62e2m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee4bf"]
+texture = ExtResource("1_0fbet")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbped"]
+texture = ExtResource("1_0fbet")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ytqx"]
+bg_color = Color(0.45490196, 0.33333334, 0.4509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1vj"]
+content_margin_left = 20.0
+bg_color = Color(0.627451, 0.9490196, 0.5803922, 1)
+corner_radius_top_left = 20
+expand_margin_top = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxugv"]
+bg_color = Color(0.627451, 0.9490196, 0.5803922, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay GUI" type="CanvasLayer" parent="."]
+
+[node name="SettingsButton" type="Button" parent="Overlay GUI"]
+offset_left = 640.0
+offset_right = 720.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_qtu10")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ee4bf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kbped")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlay GUI"]
+offset_right = 233.0
+offset_bottom = 103.0
+theme_override_fonts/bold_font = ExtResource("3_qtu10")
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[img=80]res://assets/gui/Coin-1.png[/img][b]100[/b]"
+
+[node name="Bottom Nav" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="Bottom Nav"]
+offset_top = 1185.0
+offset_right = 720.0
+offset_bottom = 1280.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ytqx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom Nav/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_constants/separation = 36
+
+[node name="Button" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_0ytqx")
+flat = true
+
+[node name="Button2" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_iy58a")
+flat = true
+
+[node name="Button3" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("7_pxugv")
+flat = true
+
+[node name="Button4" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("8_eh0v1")
+flat = true
+
+[node name="Button5" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("9_am1vj")
+flat = true
+
+[node name="Button6" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("10_g31lc")
+flat = true
+
+[node name="Resources Panel" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="Resources Panel"]
+offset_left = 420.0
+offset_top = 495.0
+offset_right = 720.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_am1vj")
+text = "Resources"
+icon = ExtResource("10_pxugv")
+
+[node name="PanelContainer2" type="PanelContainer" parent="Resources Panel"]
+offset_top = 540.0
+offset_right = 720.0
+offset_bottom = 1190.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxugv")
+
+[node name="MarginContainer" parent="Resources Panel/PanelContainer2" instance=ExtResource("5_eh0v1")]
+layout_mode = 2
+theme_override_constants/margin_top = 55

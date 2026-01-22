@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dipo84t5hm1rq"]
+
+[ext_resource type="FontFile" uid="uid://cmaq2r6om1c8p" path="res://assets/fonts/Gluten-Regular.ttf" id="1_bjoqm"]
+[ext_resource type="Script" uid="uid://das38n680hony" path="res://ResourceButton.cs" id="2_1gqi7"]
+[ext_resource type="Texture2D" uid="uid://bonfxepm2p03a" path="res://assets/gui/Coin-1.png" id="2_a2myo"]
+[ext_resource type="StyleBox" uid="uid://der3x6tsdm4mo" path="res://selectedResource.tres" id="2_fmegd"]
+
+[sub_resource type="Theme" id="Theme_1gqi7"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_bjoqm")
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 75)
+offset_right = 600.0
+offset_bottom = 81.0
+theme = SubResource("Theme_1gqi7")
+theme_override_styles/panel = ExtResource("2_fmegd")
+script = ExtResource("2_1gqi7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_a2myo")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test"
+
+[node name="Amount" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100"
+
+[node name="Price" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "$0.00"

@@ -1,0 +1,175 @@
+[gd_scene load_steps=24 format=3 uid="uid://dos5m7g68t63w"]
+
+[ext_resource type="Texture2D" uid="uid://xwckcl5avu1a" path="res://settings_button.tres" id="1_7u6ry"]
+[ext_resource type="Script" uid="uid://ckcorricj02p0" path="res://Gui.cs" id="1_e23it"]
+[ext_resource type="Texture2D" uid="uid://bhh6upi3pmfsx" path="res://assets/gui/Buttons-setting.png" id="2_e23it"]
+[ext_resource type="FontFile" uid="uid://dj4jkh247qg1p" path="res://assets/fonts/Gluten-Bold.ttf" id="3_hl6be"]
+[ext_resource type="Texture2D" uid="uid://df6lpbex30l6x" path="res://assets/gui/Buttons-Resources.png" id="4_sbet0"]
+[ext_resource type="Texture2D" uid="uid://8ho5arevt4i5" path="res://assets/gui/Buttons-Spinning-Wheel.png" id="5_k81xp"]
+[ext_resource type="Texture2D" uid="uid://dn2xygi1oy2k7" path="res://assets/gui/Buttons-Research.png" id="6_78ls4"]
+[ext_resource type="Script" uid="uid://bxew6x8hnq278" path="res://BottomNavButton.cs" id="6_sbet0"]
+[ext_resource type="Texture2D" uid="uid://ck43il0tltdcr" path="res://assets/gui/Buttons-Farmer.png" id="7_ia15a"]
+[ext_resource type="Texture2D" uid="uid://bxyruxyyn76g5" path="res://assets/gui/Buttons-Wingfoot.png" id="8_nf4fc"]
+[ext_resource type="Texture2D" uid="uid://d0lmhnk6c4h8a" path="res://assets/gui/Buttons-house.png" id="9_vwnqe"]
+[ext_resource type="Texture2D" uid="uid://bmhqfie0hmljh" path="res://assets/icons/v.png" id="10_fxds3"]
+[ext_resource type="PackedScene" uid="uid://cy5s6i4alommi" path="res://resource_manager.tscn" id="11_s1fa6"]
+[ext_resource type="Script" uid="uid://dddibgg55gt3b" path="res://ViewPanel.cs" id="12_78ls4"]
+[ext_resource type="PackedScene" uid="uid://b0qojm80lr5sq" path="res://production_manager.tscn" id="13_hl6be"]
+[ext_resource type="Script" uid="uid://dox2jic66no63" path="res://TabCollapseButton.cs" id="14_ia15a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtu10"]
+texture = ExtResource("1_7u6ry")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee4bf"]
+texture = ExtResource("2_e23it")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbped"]
+texture = ExtResource("2_e23it")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ytqx"]
+bg_color = Color(0.45490196, 0.33333334, 0.4509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1vj"]
+content_margin_left = 20.0
+bg_color = Color(0.627451, 0.9490196, 0.5803922, 1)
+corner_radius_top_left = 20
+expand_margin_top = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxugv"]
+bg_color = Color(0.627451, 0.9490196, 0.5803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78ls4"]
+bg_color = Color(0.627451, 0.9490196, 0.5803922, 1)
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e23it")
+
+[node name="Overlay GUI" type="CanvasLayer" parent="."]
+
+[node name="SettingsButton" type="Button" parent="Overlay GUI"]
+offset_left = 640.0
+offset_right = 720.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_qtu10")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ee4bf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kbped")
+
+[node name="Coins" type="RichTextLabel" parent="Overlay GUI"]
+offset_right = 233.0
+offset_bottom = 103.0
+theme_override_fonts/bold_font = ExtResource("3_hl6be")
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[img=80]res://assets/gui/Coin-1.png[/img][b]100[/b]"
+
+[node name="Bottom Nav" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Bottom Nav"]
+offset_top = 1185.0
+offset_right = 720.0
+offset_bottom = 1280.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ytqx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom Nav/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_constants/separation = 36
+
+[node name="Resources" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_sbet0")
+flat = true
+script = ExtResource("6_sbet0")
+
+[node name="Production" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_k81xp")
+flat = true
+script = ExtResource("6_sbet0")
+
+[node name="Research" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_78ls4")
+flat = true
+script = ExtResource("6_sbet0")
+
+[node name="Farmers" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("7_ia15a")
+flat = true
+script = ExtResource("6_sbet0")
+
+[node name="Boosts" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("8_nf4fc")
+flat = true
+script = ExtResource("6_sbet0")
+
+[node name="Store" type="Button" parent="Bottom Nav/PanelContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("9_vwnqe")
+flat = true
+script = ExtResource("6_sbet0")
+
+[node name="Resources" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("12_78ls4")
+
+[node name="Button" type="Button" parent="Resources"]
+offset_left = 420.0
+offset_top = 495.0
+offset_right = 720.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_am1vj")
+text = "Resources"
+icon = ExtResource("10_fxds3")
+script = ExtResource("14_ia15a")
+
+[node name="Resources Panel" type="PanelContainer" parent="Resources"]
+offset_top = 540.0
+offset_right = 720.0
+offset_bottom = 1190.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxugv")
+
+[node name="MarginContainer" parent="Resources/Resources Panel" instance=ExtResource("11_s1fa6")]
+layout_mode = 2
+
+[node name="Production" type="CanvasLayer" parent="."]
+script = ExtResource("12_78ls4")
+
+[node name="Button" type="Button" parent="Production"]
+offset_left = 420.0
+offset_top = 495.0
+offset_right = 720.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_am1vj")
+text = "Production"
+icon = ExtResource("10_fxds3")
+script = ExtResource("14_ia15a")
+
+[node name="Production Panel" type="PanelContainer" parent="Production"]
+offset_top = 540.0
+offset_right = 720.0
+offset_bottom = 1190.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_78ls4")
+
+[node name="MarginContainer" parent="Production/Production Panel" instance=ExtResource("13_hl6be")]
+layout_mode = 2
