@@ -9,12 +9,6 @@ public partial class GlobalManagement : Node
     public delegate void CurrentViewChangedEventHandler(string currentView);
 
     [Signal]
-    public delegate void CurrentMaterialTabChangedEventHandler(string currentMaterialTab);
-
-    [Signal]
-    public delegate void SelectedMaterialChangedEventHandler(string materialName);
-    
-    [Signal]
     public delegate void MaterialListChangedEventHandler();
     
     [Signal]
@@ -28,8 +22,6 @@ public partial class GlobalManagement : Node
     public static GlobalManagement Instance { get; private set; }
     public double TotalCoins { get; private set; } = 0;
     public string CurrentView { get; set; }
-    public string CurrentMaterialTab { get; set; } = "fiber";
-    public string SelectedMaterialName { get; set; }
     public string CurrentProductionTab { get; set; } = "Spinning";
     
     public override void _Ready()
@@ -66,18 +58,6 @@ public partial class GlobalManagement : Node
     {
         CurrentView = viewName;
         EmitSignal(SignalName.CurrentViewChanged, viewName);
-    }
-
-    public void SetCurrentMaterialTab(string tabName)
-    {
-        CurrentMaterialTab = tabName;
-        EmitSignal(SignalName.CurrentMaterialTabChanged, tabName);
-    }
-
-    public void SetSelectedMaterial(string materialName)
-    {
-        SelectedMaterialName = materialName;
-        EmitSignal(SignalName.SelectedMaterialChanged, materialName);
     }
 
     public void SetCurrentProductionTab(string tabName)

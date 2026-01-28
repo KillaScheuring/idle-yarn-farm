@@ -1,8 +1,11 @@
 using Godot;
 using System;
 
-public partial class ResourceButton : PanelContainer
+public partial class MaterialButton : PanelContainer
 {
+    [Signal]
+    public delegate void SelectionChangedEventHandler(string materialName);
+    
     public MaterialInfo DisplayMaterial;
 
     private StyleBoxFlat _defaultStyle;
@@ -11,8 +14,6 @@ public partial class ResourceButton : PanelContainer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GlobalManagement.Instance.SelectedMaterialChanged += UpdateStyle;
-
         // Connect the GuiInput signal to a local handler
         GuiInput += OnGuiInput;
 
@@ -37,23 +38,18 @@ public partial class ResourceButton : PanelContainer
         _selectedStyle = GD.Load<StyleBoxFlat>("res://ui/resources/selectedResource.tres");
     }
     
-    public override void _ExitTree()
-    {
-        GlobalManagement.Instance.SelectedMaterialChanged -= UpdateStyle;
-    }
-
     private void OnGuiInput(InputEvent @event)
     {
         if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed &&
             mouseEvent.ButtonIndex == MouseButton.Left)
         {
-            OnButtonPressed();
+            EmitSignal(SignalName.SelectionChanged,  DisplayMaterial.Name);
         }
     }
 
-    private void UpdateStyle(string resourceName)
+    public void UpdateStyle(string materialName)
     {
-        if (resourceName == DisplayMaterial.Name)
+        if (materialName == DisplayMaterial.Name)
         {
             AddThemeStyleboxOverride("panel", _selectedStyle);
         }
@@ -61,10 +57,5 @@ public partial class ResourceButton : PanelContainer
         {
             AddThemeStyleboxOverride("panel", _defaultStyle);
         }
-    }
-
-    private void OnButtonPressed()
-    {
-        GlobalManagement.Instance.SetSelectedMaterial(DisplayMaterial.Name);
     }
 }

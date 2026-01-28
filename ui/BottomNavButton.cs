@@ -8,10 +8,7 @@ public partial class BottomNavButton : Button
 	{
 		GlobalManagement.Instance.CurrentViewChanged += OnCurrentViewChanged;
 
-		ButtonPressed = GlobalManagement.Instance.CurrentMaterialTab == Name;
-
-		// Initial check
-		OnCurrentViewChanged(GlobalManagement.Instance.CurrentMaterialTab);
+		ButtonPressed = GlobalManagement.Instance.CurrentView == Name;
 
 		// Connect button press
 		Pressed += OnButtonPressed;
