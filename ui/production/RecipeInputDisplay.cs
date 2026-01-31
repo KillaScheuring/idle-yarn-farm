@@ -4,8 +4,8 @@ using System;
 public partial class RecipeInputDisplay : PanelContainer
 {
 	[Export] public Texture2D Icon;
-	[Export] public float RequiredQuantity;
-	[Export] public float Quantity;
+	[Export] public double RequiredQuantity;
+	[Export] public double Quantity;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

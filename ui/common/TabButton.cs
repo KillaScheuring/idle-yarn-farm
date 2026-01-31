@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ResourcesTabButton : Button
+public partial class TabButton : Button
 {
 	[Signal]
 	public delegate void ButtonClickedEventHandler(string tabName);

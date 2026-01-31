@@ -14,6 +14,8 @@
     <Folder Include="entities\farms\" />
     <Folder Include="entities\store\" />
     <Folder Include="menus\" />
+    <Folder Include="resources\items\" />
+    <Folder Include="resources\recipes\" />
     <Folder Include="scenes\main\" />
   </ItemGroup>
 </Project>

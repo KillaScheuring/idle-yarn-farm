@@ -1,12 +1,12 @@
 using Godot;
 using System;
 
-public partial class MaterialButton : PanelContainer
+public partial class ItemButton : PanelContainer
 {
     [Signal]
-    public delegate void SelectionChangedEventHandler(string materialName);
+    public delegate void SelectionChangedEventHandler(string itemName);
     
-    public MaterialInfo DisplayMaterial;
+    public Item Item;
 
     private StyleBoxFlat _defaultStyle;
     private StyleBoxFlat _selectedStyle;
@@ -19,18 +19,18 @@ public partial class MaterialButton : PanelContainer
 
         var utils = GetNode<Utils>("/root/Utils");
 
-        var texture = GD.Load<Texture2D>(DisplayMaterial.Icon_Path);
-        var icon = GetNode<TextureRect>("MarginContainer/HBoxContainer/Icon");
-        icon.Texture = texture;
+        // var texture = GD.Load<Texture2D>(Item.Icon_Path);
+        // var icon = GetNode<TextureRect>("MarginContainer/HBoxContainer/Icon");
+        // icon.Texture = texture;
 
         var label = GetNode<Label>("MarginContainer/HBoxContainer/Label");
-        label.Text = DisplayMaterial.Name;
+        label.Text = Item.Stats.Name;
 
-        var amount = GetNode<Label>("MarginContainer/HBoxContainer/Amount");
-        amount.Text = utils.ConvertToReadable(DisplayMaterial.Amount);
+        // var amount = GetNode<Label>("MarginContainer/HBoxContainer/Amount");
+        // amount.Text = utils.ConvertToReadable(Item.Amount);
 
-        var price = GetNode<Label>("MarginContainer/HBoxContainer/Price");
-        price.Text = "$" + utils.ConvertToReadable(DisplayMaterial.Price);
+        // var price = GetNode<Label>("MarginContainer/HBoxContainer/Price");
+        // price.Text = "$" + utils.ConvertToReadable(Item.Price);
 
         _defaultStyle = GD.Load<StyleBoxFlat>("res://ui/resources/unSelectedResource.tres");
         AddThemeStyleboxOverride("panel", _defaultStyle);
@@ -43,13 +43,13 @@ public partial class MaterialButton : PanelContainer
         if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed &&
             mouseEvent.ButtonIndex == MouseButton.Left)
         {
-            EmitSignal(SignalName.SelectionChanged,  DisplayMaterial.Name);
+            EmitSignal(SignalName.SelectionChanged,  Item.Stats.Name);
         }
     }
 
     public void UpdateStyle(string materialName)
     {
-        if (materialName == DisplayMaterial.Name)
+        if (materialName == Item.Stats.Name)
         {
             AddThemeStyleboxOverride("panel", _selectedStyle);
         }
