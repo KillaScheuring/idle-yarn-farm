@@ -1,37 +1,141 @@
 ﻿{
   "Fibers": [
-    { "name": "Sheep Fleece", "source":  "sheep", "price": 1},
-    { "name": "Cotton Fiber", "source":  "plant", "price": 2},
-    { "name": "Angora Wool", "source":  "rabbit", "price": 4},
-    { "name": "Cashmere Wool", "source":  "goat", "price": 8},
-    { "name": "Moth Silk", "source":  "moth", "price": 17},
-    { "name": "Frost-Goat Wool", "source":  "goat", "price": 36},
-    { "name": "Silverhare Wool", "source":  "rabbit", "price": 75},
-    { "name": "Dreamwillow Down", "source":  "bird", "price": 160},
-    { "name": "Golden-Hoof Wool", "source":  "sheep", "price": 340},
-    { "name": "Glowcap Fiber", "source":  "plant", "price": 730},
-    { "name": "Ember-Goat Fleece", "source":  "goat", "price": 1.6e3},
-    { "name": "Moonhare Wool", "source":  "rabbit", "price": 3.5e3},
-    { "name": "Sapphire-Wing Silk", "source":  "moth", "price": 7.8e3},
-    { "name": "Royal-Angora Wool", "source":  "rabbit", "price": 17.5e3},
-    { "name": "Storm-Ram Fleece", "source":  "sheep", "price": 40e3},
-    { "name": "FrostbloomFiber", "source":  "plant", "price": 92e3},
-    { "name": "Great-Horn Wool", "source":  "goat", "price": 215e3},
-    { "name": "Star-Gazer Wool", "source":  "sheep", "price": 510e3},
-    { "name": "Void-Caterpillar Silk", "source":  "moth", "price": 3.2e6},
-    { "name": "Starleaf Fiber", "source":  "plant", "price": 9e6},
-    { "name": "Eclipseflax Fiber", "source":  "plant", "price": 28e6},
-    { "name": "Solar-Moth Silk", "source":  "moth", "price": 90e6},
-    { "name": "Celestial-Hare Fiber", "source":  "rabbit", "price": 300e6},
-    { "name": "Seraph-Lamb Wool", "source":  "sheep", "price": 1.1e9},
-    { "name": "Memory-Moth Silk", "source":  "moth", "price": 4.3e9}
+    {
+      "name": "Sheep Fleece",
+      "source": "sheep",
+      "price": 1
+    },
+    {
+      "name": "Cotton Fiber",
+      "source": "plant",
+      "price": 2
+    },
+    {
+      "name": "Angora Wool",
+      "source": "rabbit",
+      "price": 4
+    },
+    {
+      "name": "Cashmere Wool",
+      "source": "goat",
+      "price": 8
+    },
+    {
+      "name": "Moth Silk",
+      "source": "moth",
+      "price": 17
+    },
+    {
+      "name": "Frost-Goat Wool",
+      "source": "goat",
+      "price": 36
+    },
+    {
+      "name": "Silverhare Wool",
+      "source": "rabbit",
+      "price": 75
+    },
+    {
+      "name": "Dreamwillow Down",
+      "source": "bird",
+      "price": 160
+    },
+    {
+      "name": "Golden-Hoof Wool",
+      "source": "sheep",
+      "price": 340
+    },
+    {
+      "name": "Glowcap Fiber",
+      "source": "plant",
+      "price": 730
+    },
+    {
+      "name": "Ember-Goat Fleece",
+      "source": "goat",
+      "price": 1.6e3
+    },
+    {
+      "name": "Moonhare Wool",
+      "source": "rabbit",
+      "price": 3.5e3
+    },
+    {
+      "name": "Sapphire-Wing Silk",
+      "source": "moth",
+      "price": 7.8e3
+    },
+    {
+      "name": "Royal-Angora Wool",
+      "source": "rabbit",
+      "price": 17.5e3
+    },
+    {
+      "name": "Storm-Ram Fleece",
+      "source": "sheep",
+      "price": 40e3
+    },
+    {
+      "name": "FrostbloomFiber",
+      "source": "plant",
+      "price": 92e3
+    },
+    {
+      "name": "Great-Horn Wool",
+      "source": "goat",
+      "price": 215e3
+    },
+    {
+      "name": "Star-Gazer Wool",
+      "source": "sheep",
+      "price": 510e3
+    },
+    {
+      "name": "Void-Caterpillar Silk",
+      "source": "moth",
+      "price": 3.2e6
+    },
+    {
+      "name": "Starleaf Fiber",
+      "source": "plant",
+      "price": 9e6
+    },
+    {
+      "name": "Eclipseflax Fiber",
+      "source": "plant",
+      "price": 28e6
+    },
+    {
+      "name": "Solar-Moth Silk",
+      "source": "moth",
+      "price": 90e6
+    },
+    {
+      "name": "Celestial-Hare Fiber",
+      "source": "rabbit",
+      "price": 300e6
+    },
+    {
+      "name": "Seraph-Lamb Wool",
+      "source": "sheep",
+      "price": 1.1e9
+    },
+    {
+      "name": "Memory-Moth Silk",
+      "source": "moth",
+      "price": 4.3e9
+    }
   ],
   "Yarns": [
     {
       "name": "Yarn 1",
       "unlock_cost": 0,
       "recipe": [
-        {"type": "fiber", "name": "Sheep Fleece", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Sheep Fleece",
+          "quantity": 100
+        }
       ],
       "production_time": 20,
       "price": 1450
@@ -40,7 +144,11 @@
       "name": "Yarn 2",
       "unlock_cost": 3000,
       "recipe": [
-        {"type": "fiber", "name": "Cotton Fiber", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Cotton Fiber",
+          "quantity": 100
+        }
       ],
       "production_time": 30,
       "price": 3000
@@ -49,7 +157,11 @@
       "name": "Yarn 3",
       "unlock_cost": 9000,
       "recipe": [
-        {"type": "fiber", "name": "Angora Wool", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Angora Wool",
+          "quantity": 100
+        }
       ],
       "production_time": 40,
       "price": 6100
@@ -58,7 +170,11 @@
       "name": "Yarn 4",
       "unlock_cost": 25000,
       "recipe": [
-        {"type": "fiber", "name": "Cashmere Wool", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Cashmere Wool",
+          "quantity": 100
+        }
       ],
       "production_time": 60,
       "price": 12500
@@ -67,7 +183,11 @@
       "name": "Yarn 5",
       "unlock_cost": 75000,
       "recipe": [
-        {"type": "fiber", "name": "Moth Silk", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Moth Silk",
+          "quantity": 100
+        }
       ],
       "production_time": 80,
       "price": 27600
@@ -76,7 +196,11 @@
       "name": "Yarn 6",
       "unlock_cost": 225000,
       "recipe": [
-        {"type": "fiber", "name": "Frost-Goat Wool", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Frost-Goat Wool",
+          "quantity": 100
+        }
       ],
       "production_time": 120,
       "price": 60000
@@ -85,7 +209,11 @@
       "name": "Yarn 7",
       "unlock_cost": 500000,
       "recipe": [
-        {"type": "fiber", "name": "Silverhare Wool", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Silverhare Wool",
+          "quantity": 100
+        }
       ],
       "production_time": 180,
       "price": 120000
@@ -94,7 +222,11 @@
       "name": "Yarn 8",
       "unlock_cost": 1000000,
       "recipe": [
-        {"type": "fiber", "name": "Dreamwillow Down", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Dreamwillow Down",
+          "quantity": 100
+        }
       ],
       "production_time": 240,
       "price": 234000
@@ -103,7 +235,11 @@
       "name": "Yarn 9",
       "unlock_cost": 2000000,
       "recipe": [
-        {"type": "fiber", "name": "Golden-Hoof Wool", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Golden-Hoof Wool",
+          "quantity": 100
+        }
       ],
       "production_time": 480,
       "price": 340000
@@ -112,7 +248,11 @@
       "name": "Yarn 10",
       "unlock_cost": 4000000,
       "recipe": [
-        {"type": "fiber", "name": "Glowcap Fiber", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Glowcap Fiber",
+          "quantity": 100
+        }
       ],
       "production_time": 600,
       "price": 780000
@@ -121,7 +261,11 @@
       "name": "Yarn 11",
       "unlock_cost": 8000000,
       "recipe": [
-        {"type": "fiber", "name": "Ember-Goat Fleece", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Ember-Goat Fleece",
+          "quantity": 100
+        }
       ],
       "production_time": 720,
       "price": 1630000
@@ -130,7 +274,11 @@
       "name": "Yarn 12",
       "unlock_cost": 15000000,
       "recipe": [
-        {"type": "fiber", "name": "Moonhare Wool", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Moonhare Wool",
+          "quantity": 100
+        }
       ],
       "production_time": 840,
       "price": 3110000
@@ -139,7 +287,11 @@
       "name": "Yarn 13",
       "unlock_cost": 30000000,
       "recipe": [
-        {"type": "fiber", "name": "Sapphire-Wing Silk", "quantity": 100}
+        {
+          "type": "fiber",
+          "name": "Sapphire-Wing Silk",
+          "quantity": 100
+        }
       ],
       "production_time": 960,
       "price": 7000000
@@ -150,7 +302,11 @@
       "name": "Item 1",
       "unlock_cost": 1000,
       "recipe": [
-        {"type": "yarn", "name": "Yarn 1", "quantity": 2}
+        {
+          "type": "yarn",
+          "name": "Yarn 1",
+          "quantity": 2
+        }
       ],
       "production_time": 20,
       "price": 6000
@@ -159,7 +315,11 @@
       "name": "Item 2",
       "unlock_cost": 2000,
       "recipe": [
-        {"type": "yarn", "name": "Yarn 2", "quantity": 2}
+        {
+          "type": "yarn",
+          "name": "Yarn 2",
+          "quantity": 2
+        }
       ],
       "production_time": 30,
       "price": 12000
@@ -167,28 +327,28 @@
   ],
   "Spinners": [
     {
-      "name": "Spinner 1", 
+      "name": "Spinner 1",
       "unlock_cost": 10000,
       "is_unlocked": true,
       "recipe": "Yarn 1",
       "last_updated": null
     },
     {
-      "name": "Spinner 2", 
+      "name": "Spinner 2",
       "unlock_cost": 10000,
       "isUnlocked": true,
       "recipe": "Yarn 2",
       "last_updated": null
     },
     {
-      "name": "Spinner 3", 
+      "name": "Spinner 3",
       "unlock_cost": 10000,
       "isUnlocked": true,
       "recipe": "",
       "last_updated": null
     },
     {
-      "name": "Spinner 4", 
+      "name": "Spinner 4",
       "unlock_cost": 10000,
       "isUnlocked": false,
       "recipe": "",

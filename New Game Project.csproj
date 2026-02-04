@@ -1,21 +1,38 @@
 <Project Sdk="Godot.NET.Sdk/4.5.1">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
-    <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>NewGameProject</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <Content Include="globals\defaults\machines.json" />
-    <Content Include="globals\defaults\materials.json" />
-    <Content Include="static_data.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="entities\farms\" />
-    <Folder Include="entities\store\" />
-    <Folder Include="menus\" />
-    <Folder Include="resources\items\" />
-    <Folder Include="resources\recipes\" />
-    <Folder Include="scenes\main\" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+        <RootNamespace>NewGameProject</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="common\Utils.gd"/>
+        <Content Include="globals\defaults\machines.json"/>
+        <Content Include="globals\defaults\materials.json"/>
+        <Content Include="globals\GlobalEnums.gd"/>
+        <Content Include="globals\GlobalManagment.gd"/>
+        <Content Include="resources\ItemStats.gd"/>
+        <Content Include="resources\MachineStats.gd"/>
+        <Content Include="resources\RecipeStats.gd"/>
+        <Content Include="static_data.json"/>
+        <Content Include="ui\bottom\BottomNavButton.gd"/>
+        <Content Include="ui\common\PanelCollapseButton.gd"/>
+        <Content Include="ui\common\TabButton.gd"/>
+        <Content Include="ui\common\ViewPanel.gd"/>
+        <Content Include="ui\Gui.gd"/>
+        <Content Include="ui\items\ItemButton.gd"/>
+        <Content Include="ui\items\ItemsPanel.gd"/>
+        <Content Include="ui\items\SellController.gd"/>
+        <Content Include="ui\production\MachineDisplay.gd"/>
+        <Content Include="ui\production\ProductionPanel.gd"/>
+        <Content Include="ui\production\RecipeInputDisplay.gd"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="entities\farms\"/>
+        <Folder Include="entities\store\"/>
+        <Folder Include="menus\"/>
+        <Folder Include="resources\items\"/>
+        <Folder Include="resources\recipes\"/>
+        <Folder Include="scenes\main\"/>
+    </ItemGroup>
 </Project>

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck43il0tltdcr"
-path="res://.godot/imported/Buttons-Farmer.png-3c63a8458e21b129b49beb2761af4625.ctex"
+path="res://.godot/imported/Buttons-farmer.png-1976b2de314f234a77a08983d5d964b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/Buttons-Farmer.png"
-dest_files=["res://.godot/imported/Buttons-Farmer.png-3c63a8458e21b129b49beb2761af4625.ctex"]
+source_file="res://assets/gui/Buttons-farmer.png"
+dest_files=["res://.godot/imported/Buttons-farmer.png-1976b2de314f234a77a08983d5d964b9.ctex"]
 
 [params]
 

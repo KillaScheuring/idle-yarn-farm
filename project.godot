@@ -29,8 +29,8 @@ config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 
 [autoload]
 
-Utils="*res://common/Utils.cs"
-GlobalManagement="*res://globals/GlobalManagement.cs"
+Manager="*res://globals/global_managment.gd"
+Enums="*res://globals/global_enums.gd"
 
 [display]
 
